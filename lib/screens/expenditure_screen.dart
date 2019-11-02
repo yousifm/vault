@@ -14,7 +14,7 @@ class ExpenditureScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final transactions = Provider.of<Transactions>(context, listen: false);
+    final transactions = Provider.of<Transactions>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
