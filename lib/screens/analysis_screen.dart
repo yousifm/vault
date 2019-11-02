@@ -28,19 +28,24 @@ class AnalysisScreen extends StatelessWidget {
                     text: "Categorical Graph",
                     isSelected: false,
                     onPressed: () {
-                      print("oi");
-                      Navigator.of(context).pushNamed(ChartScreen.routeName);
+                      Navigator.of(context).pushNamed(ChartScreen.routeName,
+                          arguments: ChartType.CATEGORICAL);
                     }),
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     AnalysisCardItem(
-                        height: MediaQuery.of(context).size.height * 0.175,
-                        width: MediaQuery.of(context).size.width * 0.425,
-                        icon: Icons.insert_chart,
-                        text: "Monthly Expenditure",
-                        iconSize: 50,
-                        isSelected: false),
+                      height: MediaQuery.of(context).size.height * 0.175,
+                      width: MediaQuery.of(context).size.width * 0.425,
+                      icon: Icons.insert_chart,
+                      text: "Monthly Expenditure",
+                      iconSize: 50,
+                      isSelected: false,
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(ChartScreen.routeName,
+                            arguments: ChartType.MONTHLY);
+                      },
+                    ),
                     AnalysisCardItem(
                         height: MediaQuery.of(context).size.height * 0.2,
                         width: MediaQuery.of(context).size.width * 0.425,

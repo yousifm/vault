@@ -28,11 +28,8 @@ class CategoricalChart extends StatelessWidget {
     final shades = charts.MaterialPalette.green.makeShades(amounts.length);
 
     for (var t in transactions.transactions) {
-      print(t['category']);
       amounts[t['category']] += t['amount'];
     }
-
-    print(amounts);
 
     for (int i = 0; i < amounts.length; i++) {
       data.add(cat(amounts.keys.toList()[i], amounts.values.toList()[i]));
@@ -60,7 +57,6 @@ class CategoricalChart extends StatelessWidget {
                 charts.ArcRendererConfig(arcWidth: 500, arcRendererDecorators: [
               charts.ArcLabelDecorator(
                   labelPosition: charts.ArcLabelPosition.auto,
-                  labelPadding: 15,
                   outsideLabelStyleSpec: charts.TextStyleSpec(
                       fontSize: 20,
                       color: charts.MaterialPalette.green.shadeDefault),
@@ -70,7 +66,7 @@ class CategoricalChart extends StatelessWidget {
           ),
         ),
         Text(
-          "You spent most on: ${data[0].name}",
+          "You spent the most on: ${data[0].name}",
           style: TextStyle(fontSize: 24),
         ),
         SizedBox(
