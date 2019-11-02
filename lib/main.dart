@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vault/screens/bank_screen.dart';
 import 'package:vault/screens/chart_screen.dart';
 import 'package:vault/screens/home_screen.dart';
+import 'package:vault/screens/loan_screen.dart';
 
 import './providers/transactions.dart';
 import './screens/analysis_screen.dart';
@@ -22,9 +24,9 @@ class Vault extends StatelessWidget {
           primarySwatch: Colors.green,
           textTheme:
               TextTheme(title: TextStyle(fontSize: 32, color: Colors.white))),
-      home: ChangeNotifierProvider<Transactions>(
-          builder: (_) => trans, child: HomeScreen()),
       routes: {
+        '/': (ctx) => ChangeNotifierProvider<Transactions>.value(
+            value: trans, child: HomeScreen()),
         ChartScreen.routeName: (ctx) =>
             ChangeNotifierProvider<Transactions>.value(
                 value: trans, child: ChartScreen()),
@@ -32,6 +34,8 @@ class Vault extends StatelessWidget {
         ExpenditureScreen.routeName: (ctx) => ExpenditureScreen(),
         OctopusScreen.routeName: (ctx) => OctopusScreen(),
         AnalysisScreen.routeName: (ctx) => AnalysisScreen(),
+        BankScreen.routeName: (ctx) => BankScreen(),
+        LoanScreen.routeName: (ctx) => LoanScreen()
       },
     );
   }

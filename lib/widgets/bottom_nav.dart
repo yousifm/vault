@@ -24,6 +24,7 @@ class _BottomNavState extends State<BottomNav> {
         data: Theme.of(context)
             .copyWith(canvasColor: Theme.of(context).primaryColorDark),
         child: BottomNavigationBar(
+          elevation: 5,
           type: BottomNavigationBarType.fixed,
           iconSize: 30,
           selectedItemColor: Colors.white,

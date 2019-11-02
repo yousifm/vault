@@ -5,6 +5,8 @@ import '../providers/transactions.dart';
 import '../widgets/transaction_item.dart';
 import '../widgets/new_transaction_modal.dart';
 
+import '../widgets/main_drawer.dart';
+
 class OverviewScreen extends StatefulWidget {
   static const routeName = '/overview';
 
@@ -32,6 +34,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: MainDrawer(),
         appBar: AppBar(
           title: Text(
             "Overview",

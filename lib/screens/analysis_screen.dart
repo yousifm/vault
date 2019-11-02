@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vault/screens/loan_screen.dart';
 import 'package:vault/widgets/analysis_card.dart';
 import 'package:vault/widgets/categorical_chart.dart';
 import './chart_screen.dart';
@@ -16,8 +17,9 @@ class AnalysisScreen extends StatelessWidget {
         ),
       ),
       body: Container(
+          alignment: Alignment.center,
           padding: EdgeInsets.all(15),
-          child: Column(children: [
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
             Row(
               children: <Widget>[
                 AnalysisCardItem(
@@ -57,6 +59,17 @@ class AnalysisScreen extends StatelessWidget {
                 )
               ],
             ),
+            AnalysisCardItem(
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: MediaQuery.of(context).size.width * 0.925,
+              icon: Icons.monetization_on,
+              text: "Loan Advisor",
+              iconSize: 50,
+              isSelected: false,
+              onPressed: () {
+                Navigator.of(context).pushNamed(LoanScreen.routeName);
+              },
+            )
           ])),
     );
   }

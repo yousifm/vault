@@ -4,6 +4,8 @@ import 'package:vault/screens/expenditure_screen.dart';
 import 'package:vault/screens/octopus_screen.dart';
 import 'package:vault/screens/overview_screen.dart';
 
+import '../widgets/main_drawer.dart';
+
 import '../widgets/bottom_nav.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       body: IndexedStack(
         index: _currentIndex,
         children: widgets,
