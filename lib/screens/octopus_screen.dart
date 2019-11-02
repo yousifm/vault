@@ -11,12 +11,13 @@ class OctopusButton extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 75,
-      child: OutlineButton(
-        highlightColor: Theme.of(context).primaryColorLight,
+      child: FlatButton(
+        color: Theme.of(context).primaryColor,
+        highlightColor: Theme.of(context).primaryColorDark,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Text(
           text,
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(fontSize: 25, color: Colors.white),
         ),
         onPressed: () {},
       ),
@@ -31,7 +32,10 @@ class OctopusScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Octopus"),
+        title: Text(
+          "Octopus",
+          style: Theme.of(context).textTheme.title,
+        ),
       ),
       body: Center(
         child: Container(

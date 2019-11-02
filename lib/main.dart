@@ -18,8 +18,9 @@ class Vault extends StatelessWidget {
     return MaterialApp(
       title: "Vault",
       theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+          primarySwatch: Colors.green,
+          textTheme:
+              TextTheme(title: TextStyle(fontSize: 32, color: Colors.white))),
       home: ChangeNotifierProvider<Transactions>(
           builder: (_) => Transactions(), child: HomeScreen()),
       routes: {
