@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vault/screens/analysis_screen.dart';
-import 'package:vault/screens/expenditure_screen.dart';
-import 'package:vault/screens/octopus_screen.dart';
-import 'package:vault/screens/overview_screen.dart';
 
 class BottomNav extends StatefulWidget {
   final Function onTap;
