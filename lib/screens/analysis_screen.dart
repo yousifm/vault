@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vault/widgets/analysis_card.dart';
+import 'package:vault/widgets/categorical_chart.dart';
+import './chart_screen.dart';
 
 class AnalysisScreen extends StatelessWidget {
   static const routeName = '/analysis';
@@ -19,17 +21,21 @@ class AnalysisScreen extends StatelessWidget {
             Row(
               children: <Widget>[
                 AnalysisCardItem(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.375,
                     width: MediaQuery.of(context).size.width * 0.5,
                     icon: Icons.pie_chart_outlined,
                     iconSize: 50,
                     text: "Categorical Graph",
-                    isSelected: false),
+                    isSelected: false,
+                    onPressed: () {
+                      print("oi");
+                      Navigator.of(context).pushNamed(ChartScreen.routeName);
+                    }),
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     AnalysisCardItem(
-                        height: MediaQuery.of(context).size.height * 0.2,
+                        height: MediaQuery.of(context).size.height * 0.175,
                         width: MediaQuery.of(context).size.width * 0.425,
                         icon: Icons.insert_chart,
                         text: "Monthly Expenditure",
@@ -46,14 +52,6 @@ class AnalysisScreen extends StatelessWidget {
                 )
               ],
             ),
-            AnalysisCardItem(
-              height: MediaQuery.of(context).size.height * 0.325,
-              width: double.infinity,
-              icon: Icons.report,
-              text: "Alerts",
-              iconSize: 50,
-              isSelected: false,
-            )
           ])),
     );
   }
