@@ -1,32 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:vault/screens/analysis_screen.dart';
+import 'package:vault/screens/expenditure_screen.dart';
+import 'package:vault/screens/octopus_screen.dart';
+import 'package:vault/screens/overview_screen.dart';
 
 class BottomNav extends StatefulWidget {
+  final Function onTap;
+
+  BottomNav(this.onTap);
+
   @override
   _BottomNavState createState() => _BottomNavState();
 }
 
 class _BottomNavState extends State<BottomNav> {
+  int index = 0;
+
+  onTap(int index) {
+    setState(() {
+      this.index = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      elevation: 5,
-      backgroundColor: Colors.red,
-      items: [
-        BottomNavigationBarItem(
-            title: Text("Overview"),
-            icon: Image.asset('assets/icons/overview_icon.png')),
-        BottomNavigationBarItem(
-            title: Text("Expenditure"),
-            icon: Image.asset('assets/icons/expenditure_icon.png')),
-        BottomNavigationBarItem(
-            title: Text(
-              "Octopus",
-            ),
-            icon: Image.asset('assets/icons/octopus_icon.png')),
-        BottomNavigationBarItem(
-            title: Text("Analysis"),
-            icon: Image.asset('assets/icons/analysis_icon.png')),
-      ],
-    );
+    return Theme(
+        data: Theme.of(context)
+            .copyWith(canvasColor: Theme.of(context).primaryColorDark),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          iconSize: 30,
+          selectedItemColor: Colors.white,
+          selectedIconTheme: IconThemeData(color: Colors.white),
+          unselectedFontSize: 16,
+          selectedFontSize: 16,
+          onTap: (int index) {
+            widget.onTap(index);
+            onTap(index);
+          },
+          currentIndex: index,
+          items: [
+            BottomNavigationBarItem(
+                title: Text("Overview"), icon: Icon(Icons.dashboard)),
+            BottomNavigationBarItem(
+                title: Text("Expenditure"), icon: Icon(Icons.attach_money)),
+            BottomNavigationBarItem(
+                title: Text(
+                  "Octopus",
+                ),
+                icon: Icon(Icons.credit_card)),
+            BottomNavigationBarItem(
+                title: Text("Analysis"), icon: Icon(Icons.insert_chart))
+          ],
+        ));
   }
 }

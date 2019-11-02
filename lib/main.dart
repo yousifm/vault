@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vault/screens/home_screen.dart';
 
-import './screens/home_screen.dart';
 import './screens/analysis_screen.dart';
 import './screens/expenditure_screen.dart';
 import './screens/octopus_screen.dart';
@@ -18,7 +18,7 @@ class Vault extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: OverviewScreen(),
+      home: HomeScreen(),
       routes: {
         OverviewScreen.routeName: (ctx) => OverviewScreen(),
         ExpenditureScreen.routeName: (ctx) => ExpenditureScreen(),
