@@ -40,6 +40,22 @@ class ExpenditureScreen extends StatelessWidget {
             icon: Icons.calendar_view_day,
             text: "Octopus",
             amount: amountWhereMedium(transactions, "Octopus"),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Total: ",
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "HKD ${transactions.transactions.fold(0.0, (sum, val) => sum + val['amount']).toStringAsFixed(2)}",
+                style: TextStyle(fontSize: 30),
+              )
+            ],
           )
         ],
       ))),
