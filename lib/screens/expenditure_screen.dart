@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vault/widgets/expenditure_item.dart';
 import 'package:provider/provider.dart';
 import '../providers/transactions.dart';
+import '../widgets/main_drawer.dart';
 
 class ExpenditureScreen extends StatelessWidget {
   static const routeName = '/expenditure';
@@ -16,6 +17,7 @@ class ExpenditureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final transactions = Provider.of<Transactions>(context);
     return Scaffold(
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: Text(
           "Expenditure",

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
 class AnalysisCardItem extends StatelessWidget {
-  IconData icon;
+  Widget leading;
   String text;
   double height;
   double width;
-  double iconSize;
   bool isSelected;
   Function onPressed;
 
   AnalysisCardItem(
-      {this.icon,
+      {this.leading,
       this.text,
       this.height,
       this.width,
-      this.iconSize,
       this.isSelected,
       this.onPressed});
 
@@ -33,24 +31,14 @@ class AnalysisCardItem extends StatelessWidget {
               child: FittedBox(
                 child: Column(
                   children: <Widget>[
-                    Icon(
-                      icon,
-                      size: iconSize,
-                      color: isSelected
-                          ? Colors.white
-                          : Theme.of(context).primaryColor,
-                    ),
+                    leading,
                     SizedBox(
                       height: 5,
                     ),
-                    Text(
-                      text,
-                      style: TextStyle(
+                    Text(text,
+                        style: TextStyle(
                           fontSize: 20,
-                          color: isSelected
-                              ? Colors.white
-                              : Theme.of(context).primaryColorDark),
-                    )
+                        ))
                   ],
                 ),
               ),

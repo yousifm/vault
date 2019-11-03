@@ -3,6 +3,7 @@ import 'package:vault/screens/loan_screen.dart';
 import 'package:vault/widgets/analysis_card.dart';
 import 'package:vault/widgets/categorical_chart.dart';
 import './chart_screen.dart';
+import '../widgets/main_drawer.dart';
 
 class AnalysisScreen extends StatelessWidget {
   static const routeName = '/analysis';
@@ -10,6 +11,7 @@ class AnalysisScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: Text(
           "Analysis",
@@ -25,8 +27,10 @@ class AnalysisScreen extends StatelessWidget {
                 AnalysisCardItem(
                     height: MediaQuery.of(context).size.height * 0.375,
                     width: MediaQuery.of(context).size.width * 0.5,
-                    icon: Icons.pie_chart_outlined,
-                    iconSize: 50,
+                    leading: Icon(
+                      Icons.pie_chart_outlined,
+                      size: 50,
+                    ),
                     text: "Categorical Graph",
                     isSelected: false,
                     onPressed: () {
@@ -39,9 +43,11 @@ class AnalysisScreen extends StatelessWidget {
                     AnalysisCardItem(
                       height: MediaQuery.of(context).size.height * 0.175,
                       width: MediaQuery.of(context).size.width * 0.425,
-                      icon: Icons.insert_chart,
+                      leading: Icon(
+                        Icons.insert_chart,
+                        size: 50,
+                      ),
                       text: "Monthly Expenditure",
-                      iconSize: 50,
                       isSelected: false,
                       onPressed: () {
                         Navigator.of(context).pushNamed(ChartScreen.routeName,
@@ -51,9 +57,11 @@ class AnalysisScreen extends StatelessWidget {
                     AnalysisCardItem(
                         height: MediaQuery.of(context).size.height * 0.2,
                         width: MediaQuery.of(context).size.width * 0.425,
-                        icon: Icons.report,
+                        leading: Icon(
+                          Icons.report,
+                          size: 50,
+                        ),
                         text: "Alerts",
-                        iconSize: 50,
                         isSelected: false)
                   ],
                 )
@@ -62,9 +70,11 @@ class AnalysisScreen extends StatelessWidget {
             AnalysisCardItem(
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width * 0.925,
-              icon: Icons.monetization_on,
+              leading: Icon(
+                Icons.monetization_on,
+                size: 50,
+              ),
               text: "Loan Advisor",
-              iconSize: 50,
               isSelected: false,
               onPressed: () {
                 Navigator.of(context).pushNamed(LoanScreen.routeName);

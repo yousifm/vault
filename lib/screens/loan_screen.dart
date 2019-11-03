@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vault/screens/short_loan_screen.dart';
 
 class LoanScreen extends StatelessWidget {
   static const routeName = '/loan';
@@ -62,7 +63,10 @@ class LoanScreen extends StatelessWidget {
                     "Short-term Loan",
                     style: TextStyle(fontSize: 26, color: Colors.white),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed(ShortTermLoanScreen.routeName);
+                  },
                 ),
               ),
             ],

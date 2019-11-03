@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vault/screens/bank_operations_screen.dart';
 
 class BankInputForm extends StatefulWidget {
   BankInputForm({Key key}) : super(key: key);
@@ -54,7 +55,9 @@ class _BankInputFormState extends State<BankInputForm> {
               child: Text("Proceed",
                   style: TextStyle(fontSize: 32, color: Colors.white)),
               color: Theme.of(context).primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(BankOperationsScreen.routeName);
+              },
             )
           ],
         ));

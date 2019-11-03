@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vault/screens/bank_operations_screen.dart';
 import 'package:vault/screens/bank_screen.dart';
 import 'package:vault/screens/chart_screen.dart';
 import 'package:vault/screens/home_screen.dart';
 import 'package:vault/screens/loan_screen.dart';
+import 'package:vault/screens/short_loan_screen.dart';
 
 import './providers/transactions.dart';
 import './screens/analysis_screen.dart';
@@ -35,7 +37,9 @@ class Vault extends StatelessWidget {
         OctopusScreen.routeName: (ctx) => OctopusScreen(),
         AnalysisScreen.routeName: (ctx) => AnalysisScreen(),
         BankScreen.routeName: (ctx) => BankScreen(),
-        LoanScreen.routeName: (ctx) => LoanScreen()
+        LoanScreen.routeName: (ctx) => LoanScreen(),
+        BankOperationsScreen.routeName: (ctx) => BankOperationsScreen(),
+        ShortTermLoanScreen.routeName: (ctx) => ShortTermLoanScreen()
       },
     );
   }
