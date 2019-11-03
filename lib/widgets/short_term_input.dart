@@ -50,11 +50,12 @@ class _ShortTermInputState extends State<ShortTermInput> {
               width: double.infinity,
               leading: Icon(
                 Icons.error_outline,
-                color: Colors.redAccent,
+                color: Colors.red,
                 size: 100,
               ),
               isSelected: false,
               text: "Loan Not Recommended",
+              textStyle: TextStyle(color: Colors.red),
             )
           ],
         ),

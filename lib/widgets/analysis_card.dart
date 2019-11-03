@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AnalysisCardItem extends StatelessWidget {
   Widget leading;
   String text;
+  TextStyle textStyle = TextStyle();
   double height;
   double width;
   bool isSelected;
@@ -11,6 +12,7 @@ class AnalysisCardItem extends StatelessWidget {
   AnalysisCardItem(
       {this.leading,
       this.text,
+      this.textStyle,
       this.height,
       this.width,
       this.isSelected,
@@ -36,9 +38,9 @@ class AnalysisCardItem extends StatelessWidget {
                       height: 5,
                     ),
                     Text(text,
-                        style: TextStyle(
-                          fontSize: 20,
-                        ))
+                        style: textStyle != null
+                            ? textStyle.copyWith(fontSize: 20)
+                            : TextStyle(fontSize: 20))
                   ],
                 ),
               ),

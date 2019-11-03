@@ -30,8 +30,10 @@ class AnalysisScreen extends StatelessWidget {
                     leading: Icon(
                       Icons.pie_chart_outlined,
                       size: 50,
+                      color: Theme.of(context).primaryColor,
                     ),
                     text: "Categorical Graph",
+                    textStyle: TextStyle(color: Theme.of(context).primaryColor),
                     isSelected: false,
                     onPressed: () {
                       Navigator.of(context).pushNamed(ChartScreen.routeName,
@@ -46,8 +48,11 @@ class AnalysisScreen extends StatelessWidget {
                       leading: Icon(
                         Icons.insert_chart,
                         size: 50,
+                        color: Theme.of(context).primaryColor,
                       ),
                       text: "Monthly Expenditure",
+                      textStyle:
+                          TextStyle(color: Theme.of(context).primaryColor),
                       isSelected: false,
                       onPressed: () {
                         Navigator.of(context).pushNamed(ChartScreen.routeName,
@@ -60,8 +65,11 @@ class AnalysisScreen extends StatelessWidget {
                         leading: Icon(
                           Icons.report,
                           size: 50,
+                          color: Theme.of(context).primaryColor,
                         ),
                         text: "Alerts",
+                        textStyle:
+                            TextStyle(color: Theme.of(context).primaryColor),
                         isSelected: false)
                   ],
                 )
@@ -73,8 +81,10 @@ class AnalysisScreen extends StatelessWidget {
               leading: Icon(
                 Icons.monetization_on,
                 size: 50,
+                color: Theme.of(context).primaryColor,
               ),
               text: "Loan Advisor",
+              textStyle: TextStyle(color: Theme.of(context).primaryColor),
               isSelected: false,
               onPressed: () {
                 Navigator.of(context).pushNamed(LoanScreen.routeName);
